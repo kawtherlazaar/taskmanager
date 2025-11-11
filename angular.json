@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/taskmanage/index.html"
+            "outputPath": "dist/taskmanage/.github/workflows/ci.yml"
 ,
             "index": "src/index.html",
             "browser": "src/main.ts",
