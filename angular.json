@@ -15,7 +15,7 @@
           "options": {
             "outputPath": "dist/taskmanager/browser",
             "index": "src/index.html",
-            "main": "src/main.ts",
+            
             "polyfills": [
               "zone.js"
             ],
