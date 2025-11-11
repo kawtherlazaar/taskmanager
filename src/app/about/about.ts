@@ -11,11 +11,12 @@ export class About {
 }
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-import { AboutComponent } from './about/about.component';
+
+
+import { App } from '../app';
 const routes: Routes = [
-{ path: '', component: AppComponent },
-{ path: 'about', component: AboutComponent }
+{ path: '', component: App },
+{ path: 'about', component: About}
 ];
 @NgModule({
 imports: [RouterModule.forRoot(routes)],

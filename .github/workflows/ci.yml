@@ -1,17 +1,3 @@
-- via cmd :  npm ci  
-- cmd : ng build --configuration production 
-
-- angular.json 
-            "outputPath": "dist/taskmanager",
-            "index": "src/index.html",
-
-cmd : npm install -g angular-cli-ghpages
-
-cmd : ng build  --configuration production  --base-href "/taskmanager/"
-
-
-anuglar-ci.yml
-
 name: Deploy Angular App to GitHub Pages
 
 on:
@@ -46,16 +32,18 @@ jobs:
       - name: Upload dist folder
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/angular-cicd/browser # ✅ must point to your Angular build output
+          path: dist/taskmanager/browser
 
   deploy:
+    needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
 
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          path: dist/taskmanager/browser

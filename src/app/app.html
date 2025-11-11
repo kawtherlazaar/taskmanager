@@ -32,5 +32,6 @@ app-task>
    <app-task [taskTitle]="task.title" [isDone]="task.done"
    (remouve)="removeTask($index)"
    ></app-task>
+   
 }
 <button (click)="addNewTask()">+</button>
