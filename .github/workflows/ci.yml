@@ -27,12 +27,14 @@ jobs:
         run: npm ci
 
       - name: Build Angular app
-        run: npm run build --prod
+        run: npm run build
+        # ينجم يزيد timeout إذا يلزم:
+        # timeout-minutes: 20
 
-      - name: Check dist folder
+      - name: Check dist structure
         run: ls -R dist
 
-      - name: Upload dist folder
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist/taskmanager/browser
@@ -42,11 +44,8 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          path: dist/taskmanager/browser
