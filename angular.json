@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/taskmanager/index.html",
+            "outputPath": "dist/taskmanager/browser",
             
             "index": "src/index.html",
             
