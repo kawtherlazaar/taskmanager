@@ -13,7 +13,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/taskmanager/browser",
+            "outputPath": "dist/angular-cicd/browser",
+            
             "index": "src/index.html",
             
             "polyfills": [
