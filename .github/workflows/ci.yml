@@ -27,9 +27,7 @@ jobs:
         run: npm ci
 
       - name: Build Angular app
-        run: npm run build
-        # ينجم يزيد timeout إذا يلزم:
-        # timeout-minutes: 20
+        run: ng build taskmanager --base-href="./"
 
       - name: Check dist structure
         run: ls -R dist
@@ -49,3 +47,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        
